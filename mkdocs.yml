@@ -1,6 +1,0 @@
-site_name: My Docs
-nav:
-  - Home: index.md
-  - 5W2H: 5W2H.md
-  - Visão: Visão.md
-  - Banco_de_dados: banco_de_dados.md
