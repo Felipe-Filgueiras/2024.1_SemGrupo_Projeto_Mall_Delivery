@@ -1,4 +1,4 @@
-## Manual do Usuário - Sistema de Gestão XYZ
+## Manual do Usuário - Sistema de Gestão Mall Delivery
 
 ### 1. Introdução
 Bem-vindo ao sistema de gestão do Mall Delivery. Este manual fornece instruções para administradores e usuários.
