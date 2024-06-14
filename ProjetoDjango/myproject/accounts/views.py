@@ -14,4 +14,12 @@ def signup(request):
     return render(request, 'accounts/signup.html', {'form': form})
 
 def landing_page(request):
-    return render(request, 'accounts/landing_page.html')
+    products = Product.objects.all()
+    return render(request, 'accounts/landing_page.html', {'products': products})
+
+from django.shortcuts import render
+from products.models import Product
+
+def user_product_list(request):
+    products = Product.objects.filter(user=request.user)
+    return render(request, 'accounts/product_list.html', {'products': products})

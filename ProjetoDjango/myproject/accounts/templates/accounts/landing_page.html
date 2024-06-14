@@ -1,3 +1,4 @@
+<!-- accounts/templates/accounts/landing_page.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,5 +11,24 @@
     <p>Logar como admin ou lojista:</p>
     <a href="{% url 'admin:index' %}"><button>Log in de admin</button></a>
     <a href="{% url 'login' %}"><button>Log in de Lojista</button></a>
+
+    {% if user.is_authenticated %}
+        {% if products %}
+            <h2>Todos os Produtos</h2>
+            <ul>
+                {% for product in products %}
+                    <li>
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:100px;height:100px;">
+                        {{ product.name }} - {{ product.description }} - ${{ product.price }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No products available.</p>
+        {% endif %}
+    {% else %}
+        <p>Please log in to see your products.</p>
+    {% endif %}
 </body>
 </html>
+
