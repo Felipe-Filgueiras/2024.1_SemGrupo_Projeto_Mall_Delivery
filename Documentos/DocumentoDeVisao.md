@@ -11,12 +11,12 @@ O propósito deste documento é fornecer uma visão geral sobre o projeto que se
 ## Descrição do Problema 
 
 <p align = "justify">
-O problema da empresa Mall delivery é o desenvolvimento de uma plataforma para cadastro de lojista. O sistema deve ter informações obrigatórias do CNPJ validado, informações pessoais, redes sociais, endereços, imagens representativas(banner e perfil), informações bancárias e o cadastro do lojista deve ser validado pelo administrador do portal.
+O problema da empresa Mall delivery é o desenvolvimento de uma plataforma para cadastro de lojista e cadastro de produtos. O sistema deve ter informações obrigatórias do CNPJ validado, informações pessoais, redes sociais, endereços, imagens representativas(banner e perfil), informações bancárias e o cadastro do lojista deve ser validado pelo administrador do portal. O cadastro de produtos deve ter uma imagem, descrição, nome, categoria e preço.
 </p>
 
 ### Problema
 
-Dificuldade em gerenciar e organizar novos cadastros de lojistas.
+Dificuldade em gerenciar e organizar novos cadastros de lojistas e seus produtos.
 ### Impactados
 
 Usuários, empresa e lojistas.
@@ -32,7 +32,7 @@ Utilizar a aplicação que será desenvolvida visando resolver o problema de cad
 ## Objetivos
 
 <p align = "justify">
-O objetivo da equipe de desenvolvimento um website utilizando Django para fazer o cadastro de novos lojistas e o gerenciamento desses lojistas.
+O objetivo da equipe de desenvolvimento um website utilizando Django para fazer o cadastro de novos lojistas, o gerenciamento desses lojistas e o gerenciamento de seus produtos.
 </p>
 
 ## Descrição do Usuário 
@@ -46,7 +46,7 @@ Os usuários serão os administradores que irão adicionar os novos lojistas.
 ### Conta
 
 <p align = "justify">
-O usuário podera cadastrar e gerir lojistas a partir da aplicação que está sendo desenvolvida.
+O usuário podera cadastrar e gerir lojistas a partir da aplicação que está sendo desenvolvida e seus respectivos produtos.
 </p>
 
 ## Restrições

@@ -13,15 +13,9 @@
 
 Sistema integrado de cadastro de lojista. O sistema contém o cadastro dos lojistas com informações obrigatórias como CNPJ validado, informações pessoais, redes sociais, endereços, entre outros...
 
-## Screenshots
-
-Screenshot1
-
-Screenshot2
-
-Screenshot3
-
 ## Instalação
+
+Seguir a instalação do django, entrar no diretório e usar o comando python manage.py runserver.
 
 **Linguagens**: Html, CSS, Python`<br>`
 **Tecnologias**: Django`<br>`
@@ -32,12 +26,4 @@ Insira um manual ou um script para auxiliar ainda mais.
 
 ## Uso
 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Vídeo
-
-Adicione 1 ou mais vídeos com a execução do projeto final.
-
-## Outros
-
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Basta rodar o projeto com pyhton manage.py runserver e seguir para o local em que o site for hospedado.
