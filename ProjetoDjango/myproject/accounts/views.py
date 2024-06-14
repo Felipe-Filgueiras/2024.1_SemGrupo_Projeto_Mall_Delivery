@@ -14,4 +14,29 @@ def signup(request):
     return render(request, 'accounts/signup.html', {'form': form})
 
 def landing_page(request):
-    return render(request, 'accounts/landing_page.html')
+    query = request.GET.get('q')
+    selected_category = request.GET.get('category')
+    
+    products = Product.objects.all()
+    
+    if query:
+        products = products.filter(name__icontains=query)
+    
+    if selected_category:
+        products = products.filter(category=selected_category)
+    
+    categories = Product.objects.values_list('category', flat=True).distinct()
+    
+    return render(request, 'accounts/landing_page.html', {
+        'products': products,
+        'query': query,
+        'selected_category': selected_category,
+        'categories': categories,
+    })
+
+from django.shortcuts import render
+from products.models import Product
+
+def user_product_list(request):
+    products = Product.objects.filter(user=request.user)
+    return render(request, 'accounts/product_list.html', {'products': products})
