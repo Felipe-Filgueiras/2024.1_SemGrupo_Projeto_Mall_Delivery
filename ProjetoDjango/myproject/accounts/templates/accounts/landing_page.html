@@ -12,23 +12,33 @@
     <a href="{% url 'admin:index' %}"><button>Log in de admin</button></a>
     <a href="{% url 'login' %}"><button>Log in de Lojista</button></a>
 
-    {% if user.is_authenticated %}
-        {% if products %}
-            <h2>Todos os Produtos</h2>
-            <ul>
-                {% for product in products %}
-                    <li>
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:100px;height:100px;">
-                        {{ product.name }} - {{ product.description }} - ${{ product.price }}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>No products available.</p>
-        {% endif %}
+    <form method="GET" action="">
+        <input type="text" name="q" placeholder="Search products..." value="{{ query|default:'' }}">
+        <select name="category">
+            <option value="">All Categories</option>
+            {% for category in categories %}
+                <option value="{{ category }}" {% if category == selected_category %}selected{% endif %}>
+                    {{ category }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if products %}
+        <h2>All Products</h2>
+        <ul>
+            {% for product in products %}
+                <li>
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:100px;height:100px;">
+                    {{ product.name }} - {{ product.description }} - ${{ product.price }}
+                </li>
+            {% endfor %}
+        </ul>
     {% else %}
-        <p>Please log in to see your products.</p>
+        <p>No products available.</p>
     {% endif %}
+    
 </body>
 </html>
 
