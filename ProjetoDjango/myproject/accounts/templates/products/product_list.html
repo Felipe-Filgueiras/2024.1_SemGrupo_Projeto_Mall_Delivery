@@ -1,9 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h2>Product List</h2>
 <div>
-  <a href="{% url 'product_add' %}">Adicionar Produto</a>
+    <h2>Adicionar Produto</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Adicionar Produto</button>
+    </form>
   <a href="{% url 'landing_page' %}"><button>Voltar ao início</button></a>
     {% for product in products %}
     <div>

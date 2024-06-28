@@ -5,9 +5,14 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def product_list(request):
-    # Fetches products that belong to the logged-in user
     products = Product.objects.filter(user=request.user)
-    return render(request, 'products/product_list.html', {'products': products})
+    form = ProductForm(request.POST, request.FILES)
+    if form.is_valid():
+            product = form.save(commit=False)
+            product.user = request.user 
+            product.save()
+            return redirect('product_list')
+    return render(request, 'products/product_list.html', {'products': products, 'form': form})
 
 @login_required
 def product_add(request):
@@ -15,7 +20,7 @@ def product_add(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save(commit=False)
-            product.user = request.user  # Ensure the product is associated with the logged-in user
+            product.user = request.user 
             product.save()
             return redirect('product_list')
     else:

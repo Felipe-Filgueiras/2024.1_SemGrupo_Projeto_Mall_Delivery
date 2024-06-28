@@ -7,7 +7,7 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ['name', 'description', 'price', 'category', 'image']
         labels = {
-            'name': 'Nome',  # Change these as per your language or preference
+            'name': 'Nome', 
             'description': 'Descrição',
             'price': 'Preço',
             'category': 'Categoria',
